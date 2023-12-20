@@ -42,6 +42,14 @@ console.log(playRound(playerSelection, computerSelection));
 */
 
 function game(){
+    console.log(`
+    
+    
+    
+    
+    
+    
+    `);
     for(let i = 0; i < 5; i++){
         let playerSelection = prompt("What do you choose?");
         let computerSelection = getComputerChoice();
