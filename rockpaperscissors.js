@@ -5,6 +5,10 @@ function getComputerChoice(){
     else return "Scissors";
 }
 
+
+let playerScore = 0;
+let computerScore = 0;
+
 function playRound(playerSelection, computerSelection){
     let winCondition = false;
     let drawCondition = false;
@@ -21,11 +25,34 @@ function playRound(playerSelection, computerSelection){
 
     //Result
     if(drawCondition) return `It's a draw! Both chose ${playerSelection}!`;
-    else if(winCondition) return `You win! ${playerSelection} beats ${computerSelection}!`;
-    else return `You lose! ${computerSelection} beats ${playerSelection}!`;
+    else if(winCondition){
+        playerScore++;
+        return `You win! ${playerSelection} beats ${computerSelection}!`;
+    }
+    else{
+        computerScore++;
+        return `You lose! ${computerSelection} beats ${playerSelection}!`;
+    }
 }
-
+/*
 //Test
 const playerSelection = "Rock";
 const computerSelection = getComputerChoice();
 console.log(playRound(playerSelection, computerSelection));
+*/
+
+function game(){
+    for(let i = 0; i < 5; i++){
+        let playerSelection = prompt("What do you choose?");
+        let computerSelection = getComputerChoice();
+
+        console.log(playRound(playerSelection, computerSelection));
+
+    }
+    if(playerScore > computerScore) return `You win!
+    ${playerScore} - ${computerScore}`;
+    else if(playerScore < computerScore) return `You lose!
+    ${playerScore} - ${computerScore}`;
+}
+
+console.log(game());
