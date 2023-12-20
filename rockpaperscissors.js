@@ -24,3 +24,8 @@ function playRound(playerSelection, computerSelection){
     else if(winCondition) return "You win! ${playerSelection} beats ${computerSelection}!"
     else return "You lose! ${computerSelection} beats $playerSelection}!"
 }
+
+//Test
+const playerSelection = "Rock";
+const computerSelection = getComputerChoice();
+console.log(playRound(playerSelection, computerSelection));
