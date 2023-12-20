@@ -5,10 +5,6 @@ function getComputerChoice(){
     else return "Scissors";
 }
 
-
-let playerScore = 0;
-let computerScore = 0;
-
 function playRound(playerSelection, computerSelection){
     let winCondition = false;
     let drawCondition = false;
@@ -34,13 +30,8 @@ function playRound(playerSelection, computerSelection){
         return `You lose! ${computerSelection} beats ${playerSelection}!`;
     }
 }
-/*
-//Test
-const playerSelection = "Rock";
-const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection));
-*/
 
+//5-Round Game Session
 function game(){
     console.log(`
     
@@ -63,4 +54,8 @@ function game(){
     ${playerScore} - ${computerScore}`;
 }
 
+let playerScore = 0;
+let computerScore = 0;
+
+//Execute
 console.log(game());
