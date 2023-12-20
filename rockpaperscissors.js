@@ -20,9 +20,9 @@ function playRound(playerSelection, computerSelection){
     else if(playerSelection == "Scissors" && computerSelection == "Scissors") drawCondition = true;
 
     //Result
-    if(drawCondition) return "It's a draw! Both chose ${playerSelection}!"
-    else if(winCondition) return "You win! ${playerSelection} beats ${computerSelection}!"
-    else return "You lose! ${computerSelection} beats $playerSelection}!"
+    if(drawCondition) return `It's a draw! Both chose ${playerSelection}!`;
+    else if(winCondition) return `You win! ${playerSelection} beats ${computerSelection}!`;
+    else return `You lose! ${computerSelection} beats ${playerSelection}!`;
 }
 
 //Test
