@@ -31,28 +31,11 @@ function playRound(playerSelection, computerSelection){
     }
 }
 
-//5-Round Game Session
-function game(){
-    console.log(`
-    
-    
-    
-    
-    
-    
-    `);
-    for(let i = 0; i < 5; i++){
-        let playerSelection = prompt("What do you choose?");
-        let computerSelection = getComputerChoice();
 
-        console.log(playRound(playerSelection, computerSelection));
-
-    }
     if(playerScore > computerScore) return `You win!
     ${playerScore} - ${computerScore}`;
     else if(playerScore < computerScore) return `You lose!
     ${playerScore} - ${computerScore}`;
-}
 
 let playerScore = 0;
 let computerScore = 0;
