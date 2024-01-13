@@ -31,7 +31,11 @@ function playRound(playerSelection, computerSelection){
     }
 }
 
+function run(){
+    console.log(playRound(choice, getComputerChoice()));
+}
 
+/*
     if(playerScore > computerScore) return `You win!
     ${playerScore} - ${computerScore}`;
     else if(playerScore < computerScore) return `You lose!
@@ -39,6 +43,26 @@ function playRound(playerSelection, computerSelection){
 
 let playerScore = 0;
 let computerScore = 0;
+*/
+
 
 //Execute
-console.log(game());
+let choice = "";
+let rock = document.querySelector('#rock');
+let paper = document.querySelector('#paper');
+let scissors = document.querySelector('#scissors');
+
+rock.addEventListener('click', (e) => {
+    choice = "Rock";
+    run();
+});
+
+paper.addEventListener('click', (e) => {
+    choice = "Paper";
+    run();
+});
+
+scissors.addEventListener('click', (e) => {
+    choice = "Scissors";
+    run();
+});
