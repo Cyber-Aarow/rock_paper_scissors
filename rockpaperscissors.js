@@ -63,6 +63,9 @@ function createResetButton(){
 function reset(){
     playerScore = 0;
     computerScore = 0;
+
+    playerDisplay.textContent = 0;
+    computerDisplay.textContent = 0;
     result.textContent = " ";
     resultFinal.textContent = " ";
 }
