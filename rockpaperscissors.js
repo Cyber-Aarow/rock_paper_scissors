@@ -30,12 +30,8 @@ function playRound(playerSelection, computerSelection){
         return `You lose! ${computerSelection} beats ${playerSelection}!`;
     }
 }
-function reset(){
-    playerScore = 0;
-    computerScore = 0;
-    result.textContent = " ";
-    resultFinal.textContent = " ";
-}
+
+
 
 function run(){
     result.textContent = playRound(choice, getComputerChoice());
@@ -47,9 +43,30 @@ function run(){
         ${playerScore} - ${computerScore}`;
         else if(playerScore < computerScore) resultFinal.textContent = `You lose!
         ${playerScore} - ${computerScore}`;
-        reset();
+        createResetButton();
     }
 }
+
+function createResetButton(){
+    let resetButton = document.createElement('button');
+    resetButton.setAttribute('style', 'color: white; background: green;')
+    resetButton.textContent = "Play again?";
+    let resetContainer = document.querySelector('#resetContainer');
+    resetContainer.appendChild(resetButton);
+    resetButton.addEventListener('click', (e) => {
+        reset();
+        resetContainer.removeChild(resetContainer.firstChild);
+    });
+    
+}
+
+function reset(){
+    playerScore = 0;
+    computerScore = 0;
+    result.textContent = " ";
+    resultFinal.textContent = " ";
+}
+
 
 let playerScore = 0;
 let computerScore = 0;
