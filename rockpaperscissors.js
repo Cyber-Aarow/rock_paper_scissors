@@ -22,17 +22,17 @@ function playRound(playerSelection, computerSelection){
     //Result
     if(drawCondition) return `It's a draw! Both chose ${playerSelection}!`;
     else if(winCondition){
-        playerScore++;
+        //playerScore++;
         return `You win! ${playerSelection} beats ${computerSelection}!`;
     }
     else{
-        computerScore++;
+        //computerScore++;
         return `You lose! ${computerSelection} beats ${playerSelection}!`;
     }
 }
 
 function run(){
-    console.log(playRound(choice, getComputerChoice()));
+    result.textContent = playRound(choice, getComputerChoice());
 }
 
 /*
@@ -51,6 +51,10 @@ let choice = "";
 let rock = document.querySelector('#rock');
 let paper = document.querySelector('#paper');
 let scissors = document.querySelector('#scissors');
+
+let playerScore = document.querySelector('#playerScore');
+let computerScore = document.querySelector('#computerScore');
+let result = document.querySelector('#result');
 
 rock.addEventListener('click', (e) => {
     choice = "Rock";
