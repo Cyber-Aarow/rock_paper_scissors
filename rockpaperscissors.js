@@ -30,6 +30,12 @@ function playRound(playerSelection, computerSelection){
         return `You lose! ${computerSelection} beats ${playerSelection}!`;
     }
 }
+function reset(){
+    playerScore = 0;
+    computerScore = 0;
+    result.textContent = " ";
+    resultFinal.textContent = " ";
+}
 
 function run(){
     result.textContent = playRound(choice, getComputerChoice());
@@ -41,6 +47,7 @@ function run(){
         ${playerScore} - ${computerScore}`;
         else if(playerScore < computerScore) resultFinal.textContent = `You lose!
         ${playerScore} - ${computerScore}`;
+        reset();
     }
 }
 
