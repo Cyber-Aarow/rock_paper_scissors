@@ -22,39 +22,40 @@ function playRound(playerSelection, computerSelection){
     //Result
     if(drawCondition) return `It's a draw! Both chose ${playerSelection}!`;
     else if(winCondition){
-        //playerScore++;
+        playerScore++;
         return `You win! ${playerSelection} beats ${computerSelection}!`;
     }
     else{
-        //computerScore++;
+        computerScore++;
         return `You lose! ${computerSelection} beats ${playerSelection}!`;
     }
 }
 
 function run(){
     result.textContent = playRound(choice, getComputerChoice());
-}
+    playerDisplay.textContent = playerScore;
+    computerDisplay.textContent = computerScore;
 
-/*
-    if(playerScore > computerScore) return `You win!
-    ${playerScore} - ${computerScore}`;
-    else if(playerScore < computerScore) return `You lose!
-    ${playerScore} - ${computerScore}`;
+    if(playerScore == 5 || computerScore == 5){
+        if(playerScore > computerScore) resultFinal.textContent = `You win!
+        ${playerScore} - ${computerScore}`;
+        else if(playerScore < computerScore) resultFinal.textContent = `You lose!
+        ${playerScore} - ${computerScore}`;
+    }
+}
 
 let playerScore = 0;
 let computerScore = 0;
-*/
-
-
 //Execute
 let choice = "";
 let rock = document.querySelector('#rock');
 let paper = document.querySelector('#paper');
 let scissors = document.querySelector('#scissors');
 
-let playerScore = document.querySelector('#playerScore');
-let computerScore = document.querySelector('#computerScore');
+let playerDisplay = document.querySelector('#playerDisplay');
+let computerDisplay = document.querySelector('#computerDisplay');
 let result = document.querySelector('#result');
+let resultFinal = document.querySelector('#resultFinal');
 
 rock.addEventListener('click', (e) => {
     choice = "Rock";
