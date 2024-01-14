@@ -31,17 +31,15 @@ function playRound(playerSelection, computerSelection){
     }
 }
 
-
-
 function run(){
     result.textContent = playRound(choice, getComputerChoice());
     playerDisplay.textContent = playerScore;
     computerDisplay.textContent = computerScore;
 
     if(playerScore == 5 || computerScore == 5){
-        if(playerScore > computerScore) resultFinal.textContent = `You win!
+        if(playerScore > computerScore) resultFinal.textContent = `You win the game!
         ${playerScore} - ${computerScore}`;
-        else if(playerScore < computerScore) resultFinal.textContent = `You lose!
+        else if(playerScore < computerScore) resultFinal.textContent = `You lose the game!
         ${playerScore} - ${computerScore}`;
         createResetButton();
     }
@@ -66,7 +64,7 @@ function reset(){
 
     playerDisplay.textContent = 0;
     computerDisplay.textContent = 0;
-    
+
     result.textContent = " ";
     resultFinal.textContent = " ";
 }
